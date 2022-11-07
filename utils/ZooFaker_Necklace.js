@@ -838,7 +838,7 @@ let utils = {
             $.joyytoken = JSON.parse(await this.gettoken($.UA))["joyytoken"];
             $.joyytoken_count = 0;
         }
-        $.joyytoken_count++;
+        $.joyytoken_count=1;
         let riskData;
         switch ($.action) {
             case 'startTask':
@@ -893,10 +893,10 @@ let utils = {
             nav: '167741',
             scr: [ 896, 414 ],
             ro: [
-              'iPhone12,1',
+              'iPhone10,2',
               'iOS',
-              '14.3',
-              '10.0.10',
+              '14.4.2',
+              '10.0.8',
               '167741',
               `${$.UUID}`,
               'a'
@@ -907,7 +907,7 @@ let utils = {
             cf_v: '01',
             bd: senddata,
             mj: [1, 0, 0],
-            blog: "a",
+            blog: this.get_blog($.UserName),
             msg: ''
         }
         data = new Buffer.from(this.xorEncrypt(JSON.stringify(data), key)).toString('base64');
